@@ -89,21 +89,21 @@ _main:
 
     ldr  param1, =part2_str1                        @ Part 2 TestA "CS6620" & "SS"
     ldr  param2, =part2_str2                        @   Params String1, String2
-    bl   _fnFindSubString                           @
+    bl   _fnFindSubString                           @ Call Find Sub String Function
     mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
     add  result_store_idx, #4                       @
 
     ldr  param1, =part2_str1                        @ Part 2 TestB "CS6620" & "620"
     ldr  param2, =part2_str3                        @   Params String1, String2
-    bl   _fnFindSubString                           @
+    bl   _fnFindSubString                           @ Call Find Sub String Function
     mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
     add  result_store_idx, #4                       @
 
     ldr  param1, =part2_str1                        @ Part 2 TestB "CS6620" & "6U"
     ldr  param2, =part2_str4                        @   Params String1, String2
-    bl   _fnFindSubString                           @
+    bl   _fnFindSubString                           @ Call Find Sub String Function
     mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
 
