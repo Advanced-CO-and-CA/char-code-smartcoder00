@@ -57,53 +57,54 @@ temp2                .req r9                        @ Temporary Variable
 .global _fnstrlen
 
 /*** main Function ******************************************************************************/
+result_store_idx     .req r8                        @ Index for result Store
 _main:
-    mov  temp, #0
+    mov  result_store_idx, #0
     ldr  param1, =part1_str1                        @ Part 1 TestA "CAT" & "BAT"
     ldr  param2, =part1_str2                        @   Params String1, String2, Length
     ldr  param3, =part1_str_len                     @
     ldr  param3, [param3]                           @
     bl   _fnCompareString                           @ Function Call to Compare String
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
-    add  temp, #4                                   @
+    add  result_store_idx, #4                       @
 
     ldr  param1, =part1_str1                        @ Part 1 TestB "CAT" & "CAT"
     ldr  param2, =part1_str1                        @   Params String1, String2, Length
     ldr  param3, =part1_str_len                     @
     ldr  param3, [param3]                           @
     bl   _fnCompareString                           @ Function Call to Compare String
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
-    add  temp, #4                                   @
+    add  result_store_idx, #4                       @
 
     ldr  param1, =part1_str1                        @ Part 1 TestB "CAT" & "CUT"
     ldr  param2, =part1_str3                        @   Params String1, String2, Length
     ldr  param3, =part1_str_len                     @
     ldr  param3, [param3]                           @
     bl   _fnCompareString                           @ Function Call to Compare String
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
-    add  temp, #4                                   @
+    add  result_store_idx, #4                       @
 
     ldr  param1, =part2_str1                        @ Part 2 TestA "CS6620" & "SS"
     ldr  param2, =part2_str2                        @   Params String1, String2
     bl   _fnFindSubString                           @
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
-    add  temp, #4                                   @
+    add  result_store_idx, #4                       @
 
     ldr  param1, =part2_str1                        @ Part 2 TestB "CS6620" & "620"
     ldr  param2, =part2_str3                        @   Params String1, String2
     bl   _fnFindSubString                           @
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
-    add  temp, #4                                   @
+    add  result_store_idx, #4                       @
 
     ldr  param1, =part2_str1                        @ Part 2 TestB "CS6620" & "6U"
     ldr  param2, =part2_str4                        @   Params String1, String2
     bl   _fnFindSubString                           @
-    mov   param1, temp                              @ Store the Result and increment
+    mov   param1, result_store_idx                  @ Store the Result and increment
     bl   _fnStoreResult                             @    Result Store Index
 
     bl   _end_of_program                            @ End of the program is here
