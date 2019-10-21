@@ -25,7 +25,7 @@
     part2_str1:           .asciz    "CS6620"
     part2_str2:           .asciz    "SS"
     part2_str3:           .asciz    "620"
-    part2_str4:           .asciz    "6U"
+    part2_str4:           .asciz    "6"
 
 @ text section
       .text
